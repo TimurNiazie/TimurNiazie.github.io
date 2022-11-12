@@ -29,3 +29,23 @@ ws3.onmessage = (event) => {
   stockPriceElement3.innerText = price3;
   stockPriceElement3.style.color = !lastPrice3 || lastPrice3 === price3 ? 'white' : price3 > lastPrice3 ? 'green' : 'red';
 }
+
+let ws4 = new WebSocket('wss://stream.binance.com:9443/ws/galeur@trade')
+let stockPriceElement4 = document.getElementById('stock-price4')
+let lastPrice4 = null;
+ws4.onmessage = (event) => {
+  let stockObject4 = JSON.parse(event.data);
+  let price3 = parseFloat(stockObject4.p).toFixed(2);
+  stockPriceElement4.innerText = price4;
+  stockPriceElement4.style.color = !lastPrice4 || lastPrice4 === price4 ? 'white' : price4 > lastPrice4 ? 'green' : 'red';
+}
+
+let ws5 = new WebSocket('wss://stream.binance.com:9443/ws/gmteur@trade')
+let stockPriceElement5 = document.getElementById('stock-price5')
+let lastPrice5 = null;
+ws4.onmessage = (event) => {
+  let stockObject5 = JSON.parse(event.data);
+  let price3 = parseFloat(stockObject5.p).toFixed(2);
+  stockPriceElement5.innerText = price4;
+  stockPriceElement5.style.color = !lastPrice5 || lastPrice5 === price5 ? 'white' : price5 > lastPrice5 ? 'green' : 'red';
+}
