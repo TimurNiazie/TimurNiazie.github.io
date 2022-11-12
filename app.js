@@ -18,6 +18,8 @@ ws2.onmessage = (event) => {
   let price2 = parseFloat(stockObject2.p).toFixed(2);
   stockPriceElement2.innerText = price2;
   stockPriceElement2.style.color = !lastPrice2 || lastPrice2 === price2 ? 'white' : price2 > lastPrice2 ? 'green' : 'red';
+
+  lastPrice2 = price2;
 }
 
 let ws3 = new WebSocket('wss://stream.binance.com:9443/ws/bnbeur@trade')
@@ -28,6 +30,7 @@ ws3.onmessage = (event) => {
   let price3 = parseFloat(stockObject3.p).toFixed(2);
   stockPriceElement3.innerText = price3;
   stockPriceElement3.style.color = !lastPrice3 || lastPrice3 === price3 ? 'white' : price3 > lastPrice3 ? 'green' : 'red';
+  lastPrice3 = price3;
 }
 
 let ws4 = new WebSocket('wss://stream.binance.com:9443/ws/galeur@trade')
@@ -38,6 +41,8 @@ ws4.onmessage = (event) => {
   let price3 = parseFloat(stockObject4.p).toFixed(2);
   stockPriceElement4.innerText = price4;
   stockPriceElement4.style.color = !lastPrice4 || lastPrice4 === price4 ? 'white' : price4 > lastPrice4 ? 'green' : 'red';
+
+  lastPrice4 = price4;
 }
 
 let ws5 = new WebSocket('wss://stream.binance.com:9443/ws/gmteur@trade')
@@ -48,4 +53,6 @@ ws4.onmessage = (event) => {
   let price3 = parseFloat(stockObject5.p).toFixed(2);
   stockPriceElement5.innerText = price4;
   stockPriceElement5.style.color = !lastPrice5 || lastPrice5 === price5 ? 'white' : price5 > lastPrice5 ? 'green' : 'red';
+
+  lastPrice5 = price5;
 }
